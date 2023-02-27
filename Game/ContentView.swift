@@ -31,10 +31,12 @@ struct ContentView: View {
             VStack {
                 HStack {
                     Spacer()
+                    Text("CPU")
                     Image(playerCard)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                     Spacer()
+                    Text("Player")
                     Image(cpuCard)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
