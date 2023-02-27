@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var playerScore = 0
     @State var counter = ("")
     @State var counter1 = (" Player Name :")
+    @State var winnerName = "-- WINNER NAME --"
     
     var body: some View {
         VStack {
@@ -41,7 +42,7 @@ struct ContentView: View {
                 }
                 .background(Color(.lightGray))
                 Button(action: {
-                    
+                    winnerName = "-- WINNER NAME --"
                     let playerRandom = Int.random(in: 1...14)
                     let cpuRandom = Int.random(in: 1...14)
                     
@@ -85,7 +86,13 @@ struct ContentView: View {
                 })
                 Spacer()
                 Button(action: {
-                    
+                    if playerScore > cpuScore {
+                        winnerName = "Player WON".uppercased()
+                    } else if cpuScore > playerScore {
+                        winnerName = "cpu WON".uppercased()
+                    } else {
+                        winnerName = "draw".uppercased()
+                    }
                 }, label: {
                     Text("DONE")
                         .imageScale(.large)
@@ -94,6 +101,10 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .font(.title)
                 })
+                Spacer()
+                Text(winnerName)
+                    .foregroundColor(.white)
+                    .font(.largeTitle)
             }
         }
         .background(Color(.red))
