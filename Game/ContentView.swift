@@ -57,32 +57,40 @@ struct ContentView: View {
                     }
                     
                 },label: {
-                    HStack{
-                        VStack {
-                            Spacer()
-                            Image("LOGO")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                            Text("Player")
-                            Text(String(playerScore))
-                                .imageScale(.large)
-                                .fixedSize()
-                                .foregroundColor(.white)
-                                .font(.largeTitle)
-                                .font(.title)
-                            Spacer()
-                        }
-                        VStack {
-                            Spacer()
-                            Text("CPU")
-                            Text(String(cpuScore))
-                                .imageScale(.large)
-                                .fixedSize()
-                                .foregroundColor(.black)
-                                .font(.largeTitle)
-                            Spacer()
+                    VStack {
+                        Text("PLAY".uppercased())
+                            .foregroundColor(.white)
+                            .font(.body)
+                        Image("LOGO")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .aspectRatio(contentMode: .fit)
+                        Spacer()
+                        HStack{
+                            VStack {
+                                Spacer()
+                                Text("Player")
+                                Text(String(playerScore))
+                                    .imageScale(.large)
+                                    .fixedSize()
+                                    .foregroundColor(.white)
+                                    .font(.largeTitle)
+                                    .font(.title)
+                                Spacer()
+                            }
+                            VStack {
+                                Spacer()
+                                Text("CPU")
+                                Text(String(cpuScore))
+                                    .imageScale(.large)
+                                    .fixedSize()
+                                    .foregroundColor(.black)
+                                    .font(.largeTitle)
+                                Spacer()
+                            }
                         }
                     }
+                    
                 })
                 Spacer()
                 Button(action: {
@@ -93,14 +101,13 @@ struct ContentView: View {
                     } else {
                         winnerName = "draw".uppercased()
                     }
-                }, label: {
+                }) {
                     Text("DONE")
                         .imageScale(.large)
                         .fixedSize()
                         .foregroundColor(.white)
-                        .font(.largeTitle)
                         .font(.title)
-                })
+                }
                 Spacer()
                 Text(winnerName)
                     .foregroundColor(.white)
