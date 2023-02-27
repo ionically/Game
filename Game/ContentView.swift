@@ -56,7 +56,7 @@ struct ContentView: View {
                         cpuScore += 1
                     }
                     
-                },label: {
+                }) {
                     VStack {
                         Text("PLAY".uppercased())
                             .foregroundColor(.white)
@@ -90,8 +90,7 @@ struct ContentView: View {
                             }
                         }
                     }
-                    
-                })
+                }
                 Spacer()
                 Button(action: {
                     if playerScore > cpuScore {
@@ -102,9 +101,7 @@ struct ContentView: View {
                         winnerName = "draw".uppercased()
                     }
                 }) {
-                    Text("DONE")
-                        .imageScale(.large)
-                        .fixedSize()
+                    Text("stop game".uppercased())
                         .foregroundColor(.white)
                         .font(.title)
                 }
