@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var cpuScore = 0
     @State private var playerScore = 0
     @State var counter = ("")
-    @State var counter1 = ("Player")
+    @State var counter1 = (" Player Name :")
     
     var body: some View {
         VStack {
@@ -90,7 +90,7 @@ struct ContentView: View {
                         .fixedSize()
                         .foregroundColor(.accentColor)
                         .font(.largeTitle)
-                    TextField("CPU :", text: $counter)
+                    TextField(":", text: $counter)
                     TextField("Player :", text: $counter1)
                     
                 }
