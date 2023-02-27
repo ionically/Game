@@ -12,6 +12,8 @@ struct ContentView: View {
     @State private var playerCard = "card"
     @State private var cpuScore = 0
     @State private var playerScore = 0
+    @State var counter = ("")
+    @State var counter1 = ("Player")
     
     var body: some View {
         VStack {
@@ -24,7 +26,7 @@ struct ContentView: View {
             Image("background")
                 .foregroundColor(.red)
                 .ignoresSafeArea()
-                
+            
             VStack {
                 HStack {
                     Spacer()
@@ -54,7 +56,7 @@ struct ContentView: View {
                     }
                     
                 },label: {
-                    VStack{
+                    HStack{
                         VStack {
                             Spacer()
                             Image("LOGO")
@@ -83,15 +85,19 @@ struct ContentView: View {
                 })
                 VStack{
                     Image(systemName: "pencil")
-                    Text("Enjoy Your Journey!")
+                    Text("Winner Name :\(counter)")
                         .imageScale(.large)
                         .fixedSize()
                         .foregroundColor(.accentColor)
                         .font(.largeTitle)
+                    TextField("CPU :", text: $counter)
+                    TextField("Player :", text: $counter1)
+                    
                 }
             }
         }
         .background(Color(.red))
+    
     }
     
     struct ContentView_Previews: PreviewProvider {
