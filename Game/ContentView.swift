@@ -83,21 +83,20 @@ struct ContentView: View {
                         }
                     }
                 })
-                VStack{
-                    Image(systemName: "pencil")
-                    Text("Winner Name :\(counter)")
+                Spacer()
+                Button(action: {
+                    
+                }, label: {
+                    Text("DONE")
                         .imageScale(.large)
                         .fixedSize()
-                        .foregroundColor(.accentColor)
+                        .foregroundColor(.white)
                         .font(.largeTitle)
-                    TextField(":", text: $counter)
-                    TextField("Player :", text: $counter1)
-                    
-                }
+                        .font(.title)
+                })
             }
         }
         .background(Color(.red))
-    
     }
     
     struct ContentView_Previews: PreviewProvider {
